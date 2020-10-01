@@ -14,7 +14,14 @@ def the_shorter
     puts journalist.sort! { |a, b|  a.length <=> b.length }[0]
 end
 
-# Combien commencent par une majuscule (première lettre juste après le @) ? 
+#  
+
+def the_upercase
+    puts "- Combien commencent par une majuscule (première lettre juste après le @) ? "
+    puts journalist.count { |s| s.match? /\A@[[:upper:]]/ }
+end
+
+
 
 
 def array_five
@@ -23,7 +30,7 @@ end
 
 
 def alpha
-    puts " voici le tableau trier alphabétiquement : "
+    puts "- voici le tableau trier alphabétiquement : "
     puts ""
     puts "#{journalist.sort!}"
 end
@@ -36,15 +43,16 @@ end
 
 
 def index
-    print ""
+    puts ""
     puts "- @epenser est à la position #{journalist.index("@epenser")} dans l'array"
 end
 
 def which_length
     o = 0
     n = 2
+    puts ""
     puts "- répartitions des handles par longueur : "
-    12.times do |i|
+    33.times do |i|
         puts "• il y a #{journalist.count {|i| i.length > o && i.length < n }} handle de #{i + 1} caractères"
         o = o + 1
         n = n + 1
@@ -56,6 +64,7 @@ def perform
     array_length
     array_five
     the_shorter
+    the_upercase
     alpha
     short_to_big
     index
