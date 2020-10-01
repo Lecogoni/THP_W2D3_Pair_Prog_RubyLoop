@@ -25,15 +25,6 @@ end
 
 MyHash = hash_builder bitcoin, figure
 
-
-# arr1 = ['fred', "nico", "virginie", "sophie"]
-# arr2 = [64, 40, 41, 32]
-
-# people = hash_builder arr1, arr2
-
-# puts "montre le array initial :"
-# puts people
-
 puts MyHash.sort_by { |header, data| data.to_f }
 puts
 puts
